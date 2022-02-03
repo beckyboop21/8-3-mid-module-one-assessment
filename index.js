@@ -21,12 +21,23 @@ const animals = [
  * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
  * @returns {number} The total of all animal counts.
  *
+ * 
  * EXAMPLE
  * ------------------
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  let total = 0; 
+  for (let animal of animals){
+    total += animal.count;
+  }
+    
+  
+  return total;
+  
+
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -40,7 +51,13 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  let array= [];
+  for (let i = 0; i < animals.length;i++){
+    array.push(animals[i].kind);
+  }
+  return array; 
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +76,14 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  let array =[]; 
+  for(let animal of animals) {
+    if(animal.count >= minimum)
+    array.push(animal);
+  }
+  return array;
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +97,31 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+    if(animals.length === 0)
+     return null; 
+
+     let highestCountAnimal = {};
+
+     let count = 0; 
+  }
+    let highest = animals[0];
+    for(let i = 0;i < animals.length; i++) {
+      
+      if(animals[i].count > count){
+     
+        let count = animals[i].count
+
+        highest = animals[i]
+
+    }
+  }
+
+    
+
+
+
+
 
 // Do not change anything below this line.
 module.exports = {
